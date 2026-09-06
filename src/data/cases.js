@@ -1,0 +1,42 @@
+export const cases = [
+  {
+    id: "01-001-11",
+    model: "iPhone 11",
+    colour: "Pink",
+    inscription: "God will never fail you",
+    price: 60,
+    status: "Sold",
+  },
+  {
+    id: "01-002-11",
+    model: "iPhone 11",
+    colour: "Black",
+    inscription: "Jesus",
+    price: 60,
+    status: "Sold",
+  },
+  {
+    id: "01-003-12",
+    model: "iPhone 12",
+    colour: "Black",
+    inscription: "I love Jesus",
+    price: 60,
+    status: "In Stock",
+  },
+  {
+    id: "01-004-12",
+    model: "iPhone 12",
+    colour: "Black",
+    inscription: "Faith over fear",
+    price: 60,
+    status: "In Stock",
+  },
+  {
+    id: "01-005-13",
+    model: "iPhone 13",
+    colour: "Beige",
+    inscription: "I can do all things",
+    price: 60,
+    status: "In Stock",
+  },
+];
