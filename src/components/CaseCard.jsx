@@ -2,7 +2,10 @@ function CaseCard({ caseItem }) {
   return (
     <article className="case-card">
       <div className="case-image">
-        Image
+        <img
+          src={caseItem.image}
+          alt={`${caseItem.model} ${caseItem.inscription} case`}
+        />
       </div>
 
       <div className="case-info">
@@ -16,7 +19,11 @@ function CaseCard({ caseItem }) {
           GH₵{caseItem.price}
         </p>
 
-        <p className="case-status">
+        <p
+          className={`case-status ${caseItem.status
+            .toLowerCase()
+            .replace(/\s+/g, "-")}`}
+        >
           {caseItem.status}
         </p>
       </div>
