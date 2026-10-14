@@ -4,7 +4,7 @@ A web application for managing and displaying InScript's phone case inventory an
 
 InScript is a Christian-themed phone case business. The website will provide customers with a public-facing catalogue where they can browse available phone cases by phone model, view case details, prices, images, and availability status.
 
-The application will also include an **admin portal** for managing inventory. The inventory will be maintained through Google Sheets, with the website eventually syncing inventory information from Google Sheets to the public catalogue.
+Inventory management will be handled directly via Google Sheets, which serves as the admin interface. The website will sync inventory information from Google Sheets to the public catalogue.
 
 ---
 
@@ -14,6 +14,7 @@ The InScript website will provide:
 
 - A public-facing landing page for the business
 - A searchable phone case catalogue
+- Direct "Buy" buttons on product cards that link to Instagram DM with a pre-filled message including the Case ID
 - Phone case information including:
   - Case ID
   - Phone model
@@ -24,8 +25,7 @@ The InScript website will provide:
   - Product image
 - Filtering by phone model and other relevant attributes
 - Individual case/product detail pages
-- An admin portal for inventory management
-- Google Sheets integration for inventory data
+- Google Sheets integration for inventory data (serving as the admin interface)
 - Automatic synchronization between inventory and the public catalogue
 - Responsive design for desktop, tablet, and mobile devices
 
@@ -425,7 +425,6 @@ src/
 │   ├── Home.jsx
 │   ├── Catalogue.jsx
 │   ├── CaseDetails.jsx
-│   ├── Admin.jsx
 │   └── ...
 │
 ├── data/
@@ -446,50 +445,16 @@ These folders and components will be added only when they become necessary.
 
 ---
 
-# Planned Admin Portal
+# Inventory Management via Google Sheets
 
-The admin side of the application will eventually allow authorized users to manage inventory.
+Google Sheets serves as the business's inventory management interface.
 
-Potential functionality includes:
-
-- View inventory
-- Search inventory
-- View stock status
-- Update case status
-- Add new cases
-- Edit case information
-- Mark cases as sold
-- Mark cases as unavailable
-- Monitor inventory
-
-The intended workflow is:
-
-```text
-Admin
-  ↓
-Google Sheets Inventory
-  ↓
-Inventory Data
-  ↓
-Website
-  ↓
-Public Catalogue
-```
-
-The public catalogue should reflect the current inventory status so customers can distinguish between available and unavailable cases.
-
----
-
-# Planned Google Sheets Integration
-
-Google Sheets will serve as the business's inventory management interface.
-
-The long-term system will allow the business to continue managing inventory in Google Sheets while the website consumes the updated data.
+The system allows the business to manage inventory directly in Google Sheets, while the website consumes the updated data.
 
 Conceptually:
 
 ```text
-                  Google Sheets
+                  Google Sheets (Admin Interface)
                        │
                        │ Inventory data
                        ↓
@@ -498,9 +463,8 @@ Conceptually:
                        ↓
                   React App
                        │
-              ┌────────┴────────┐
-              ↓                 ↓
-       Public Catalogue     Admin Portal
+                       ↓
+                Public Catalogue
 ```
 
 The exact backend/API architecture will be determined during the integration stage.
@@ -550,22 +514,12 @@ The exact backend/API architecture will be determined during the integration sta
 - [ ] Synchronize inventory status
 - [ ] Connect case images
 
-## Phase 5 — Admin Portal
-
-- [ ] Create admin login
-- [ ] Create inventory dashboard
-- [ ] Display inventory
-- [ ] Add inventory management functionality
-- [ ] Implement appropriate access control
-- [ ] Connect admin interface to inventory data
-
-## Phase 6 — Production
+## Phase 5 — Final Polish & Optimization
 
 - [ ] Test application
 - [ ] Test mobile responsiveness
 - [ ] Test catalogue search and filtering
 - [ ] Test inventory synchronization
-- [ ] Test admin functionality
 - [ ] Optimize images and performance
 - [ ] Configure production environment
 - [ ] Deploy application
